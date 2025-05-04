@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.htmlwidget">
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@android:drawable/ic_menu_view"
+        android:label="HTML Widget for Smartspacer"
+        android:supportsRtl="true">
+
+        <!-- Widget Provider -->
+        <provider
+            android:name=".HtmlWidgetProvider"
+            android:authorities="${applicationId}.htmlwidget.provider"
+            android:exported="true"
+            android:permission="com.kieronquinn.app.smartspacer.permission.ACCESS_SMARTSPACER_PROVIDER">
+            <intent-filter>
+                <action android:name="com.kieronquinn.app.smartspacer.ACTION_WIDGET_PROVIDER" />
+            </intent-filter>
+        </provider>
+
+        <!-- Target Provider -->
+        <provider
+            android:name=".HtmlWidgetTargetProvider"
+            android:authorities="${applicationId}.htmlwidget.target"
+            android:exported="true"
+            android:permission="com.kieronquinn.app.smartspacer.permission.ACCESS_SMARTSPACER_PROVIDER">
+            <intent-filter>
+                <action android:name="com.kieronquinn.app.smartspacer.ACTION_TARGET_PROVIDER" />
+            </intent-filter>
+        </provider>
+
+        <!-- Configuration Activity -->
+        <activity
+            android:name=".HtmlWidgetConfigActivity"
+            android:exported="true"
+            android:label="Configure HTML Widget" />
+
+        <!-- HTML Preview Activity -->
+        <activity
+            android:name=".HtmlPreviewActivity"
+            android:exported="false"
+            android:label="HTML Preview" />
+
+        <!-- Update Service -->
+        <service
+            android:name=".HtmlWidgetUpdateService"
+            android:exported="false" />
+    </application>
+</manifest>

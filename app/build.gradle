@@ -1,0 +1,49 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.example.htmlwidget'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.htmlwidget"
+        minSdk 26
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        // Required for Smartspacer plugins
+        manifestPlaceholders = [smartspacerPluginName: "HTML Widget"]
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+
+dependencies {
+    // Smartspacer SDK
+    implementation 'com.kieronquinn.smartspacer:sdk-plugin:1.0.1'
+    
+    // Android core libraries
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    
+    // WebView related
+    implementation 'androidx.webkit:webkit:1.6.0'
+}

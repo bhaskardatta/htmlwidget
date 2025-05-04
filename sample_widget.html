@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            color: #333;
+            background-color: #f8f8f8;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .header {
+            background-color: #4285f4;
+            color: white;
+            padding: 10px;
+            border-radius: 5px 5px 0 0;
+            text-align: center;
+        }
+        .content {
+            flex: 1;
+            padding: 10px;
+            background-color: white;
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            overflow-y: auto;
+        }
+        .footer {
+            background-color: #f1f1f1;
+            padding: 8px;
+            border-radius: 0 0 5px 5px;
+            text-align: center;
+            font-size: 12px;
+            border: 1px solid #ddd;
+        }
+        h1 {
+            margin: 0;
+            font-size: 18px;
+        }
+        p {
+            margin: 10px 0;
+        }
+        .data-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .data-label {
+            font-weight: bold;
+        }
+        .data-value {
+            color: #4285f4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>HTML Widget Template</h1>
+        </div>
+        <div class="content">
+            <div class="data-item">
+                <span class="data-label">Temperature</span>
+                <span class="data-value">72°F</span>
+            </div>
+            <div class="data-item">
+                <span class="data-label">Humidity</span>
+                <span class="data-value">45%</span>
+            </div>
+            <div class="data-item">
+                <span class="data-label">Wind</span>
+                <span class="data-value">5 mph</span>
+            </div>
+            <p>This is a sample HTML widget that demonstrates how content can be displayed in the Smartspacer widget. You can customize this template with your own content and styling.</p>
+        </div>
+        <div class="footer">
+            Last updated: <span id="timestamp"></span>
+            <script>
+                document.getElementById('timestamp').textContent = new Date().toLocaleString();
+            </script>
+        </div>
+    </div>
+</body>
+</html>
